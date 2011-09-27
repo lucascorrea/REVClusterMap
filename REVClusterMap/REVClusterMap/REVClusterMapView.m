@@ -176,10 +176,15 @@
 - (void) mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
     
-    if( [self mapViewDidZoom] )
-    {
-        [super removeAnnotations:self.annotations];
-        self.showsUserLocation = self.showsUserLocation;
+	if([self mapViewDidZoom])
+	{
+		[self.annotations enumerateObjectsUsingBlock:^(id annotation, NSUInteger index, BOOL *stop)
+		 {
+			 if (![annotation isKindOfClass:[MKUserLocation class]])
+			 {
+				 [super removeAnnotation:annotation];
+			 }
+		 }];
     }
     
     NSArray *add = [REVClusterManager clusterAnnotationsForMapView:self forAnnotations:annotationsCopy blocks:self.blocks minClusterLevel:self.minimumClusterLevel];
