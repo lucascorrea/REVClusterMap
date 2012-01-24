@@ -41,7 +41,7 @@
         
         CLLocationCoordinate2D location = MKCoordinateForMapPoint(MKMapPointMake(x, y));
 
-        REVClusterPin *pin = [[[REVClusterPin alloc] init] autorelease];
+        REVClusterPin *pin = [[REVClusterPin alloc] init];
         pin.coordinate = location;
         pin.nodes = [annotationsCollection collection];
         return pin;
@@ -62,8 +62,7 @@
 
 - (void) dealloc
 {
-    [annotationsCollection release], annotationsCollection = nil;
-    [super dealloc];
+    annotationsCollection = nil;
 }
 
 @end

@@ -47,7 +47,6 @@
 
 -(void)dealloc
 {
-    [collection release], collection = nil;
-    [super dealloc];
+    collection = nil;
 }
 @end

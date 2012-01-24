@@ -22,11 +22,4 @@
     return 0;
 }
 
-- (void)dealloc
-{
-    [title release];
-    [subtitle release];
-    [nodes release];
-    [super dealloc];
-}
 @end

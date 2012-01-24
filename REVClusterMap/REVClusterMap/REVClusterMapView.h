@@ -27,6 +27,6 @@
 @property (nonatomic,assign) NSUInteger minimumClusterLevel;
 
 /** Specifies the receiver‚Äôs delegate object. */
-@property(nonatomic,assign) id<MKMapViewDelegate> delegate;
+@property(nonatomic,unsafe_unretained) id<MKMapViewDelegate> delegate;
 
 @end
