@@ -20,14 +20,15 @@
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     if ( self )
     {
-        label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 26, 26)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(14, 6, 24, 17)];
         [self addSubview:label];
         label.textColor = [UIColor whiteColor];
         label.backgroundColor = [UIColor clearColor];
-        label.font = [UIFont boldSystemFontOfSize:11]; 
+		//        label.backgroundColor = [UIColor blueColor];
+        label.font = [UIFont fontWithName:@"Arial-BoldMT" size:16];
         label.textAlignment = UITextAlignmentCenter;
-        label.shadowColor = [UIColor blackColor];
-        label.shadowOffset = CGSizeMake(0,-1);
+		//        label.shadowColor = [UIColor blackColor];
+		//        label.shadowOffset = CGSizeMake(1,-1);
     }
     return self;
 }
