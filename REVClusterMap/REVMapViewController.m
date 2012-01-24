@@ -23,8 +23,7 @@
 
 - (void)dealloc
 {
-    [_mapView release], _mapView = nil;
-    [super dealloc];
+    _mapView = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,7 +70,6 @@
         pin.subtitle = [NSString stringWithFormat:@"Pin %i subtitle",i+1];
         pin.coordinate = newCoord;
         [pins addObject:pin];
-        [pin release]; 
     }
     
     [_mapView addAnnotations:pins];
@@ -93,7 +91,7 @@
         annView = (REVClusterAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"cluster"];
         
         if( !annView )
-            annView = (REVClusterAnnotationView*)[[[REVClusterAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"cluster"] autorelease];
+            annView = (REVClusterAnnotationView*)[[REVClusterAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"cluster"];
         
         annView.image = [UIImage imageNamed:@"cluster.png"];
         [(REVClusterAnnotationView*)annView setClusterText:[NSString stringWithFormat:@"%i",[pin nodeCount]]];
@@ -102,7 +100,7 @@
         annView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
         
         if( !annView )
-            annView = [[[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"] autorelease];
+            annView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
         
         annView.image = [UIImage imageNamed:@"pinpoint.png"];
         annView.canShowCallout = YES;   

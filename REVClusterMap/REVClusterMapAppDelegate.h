@@ -14,8 +14,8 @@
     REVMapViewController *viewController;
 }
 
-@property (nonatomic,retain) REVMapViewController *viewController;
+@property (nonatomic) REVMapViewController *viewController;
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic) IBOutlet UIWindow *window;
 
 @end

@@ -12,9 +12,5 @@
 
 @implementation REVClusterMapAppDelegate_iPad
 
-- (void)dealloc
-{
-	[super dealloc];
-}
 
 @end

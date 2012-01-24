@@ -63,7 +63,6 @@
     {
         REVClusterBlock *block = [[REVClusterBlock alloc] init];
         [clusteredBlocks addObject:block];
-        [block release];  
     }
     
     for (REVClusterPin *pin in visibleAnnotations)

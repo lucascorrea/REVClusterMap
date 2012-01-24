@@ -39,8 +39,7 @@
 
 - (void) dealloc
 {
-    [label release], label = nil;
-    [super dealloc];
+    label = nil;
 }
 
 @end
