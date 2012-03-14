@@ -48,7 +48,7 @@
 {
     annotationsCopy = nil;
 
-    self.minimumClusterLevel = 100000;
+    self.minimumClusterLevel = 200000;
     self.blocks = 4;
 
     super.delegate = self;
